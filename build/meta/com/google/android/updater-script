@@ -1,0 +1,18 @@
+ui_print("Installing GApps...");
+run_program("/sbin/busybox", "mount", "/system");
+show_progress(1, 15);
+package_extract_dir("system", "/system");
+set_perm(0, 0, 0755, "/system/addon.d/30-gapps.sh");
+package_extract_file("system/faceunlock.sh", "/tmp/faceunlock.sh");
+set_perm(0, 0, 0777, "/tmp/faceunlock.sh");
+run_program("/tmp/faceunlock.sh", "");
+show_progress(1, 15);
+set_metadata_recursive("/system/addon.d", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata_recursive("/system/app", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata_recursive("/system/priv-app", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata_recursive("/system/etc/permissions", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata_recursive("/system/framework", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+set_metadata_recursive("/system/vendor/pittpatt", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+delete("/system/faceunlock.sh");
+run_program("/sbin/busybox", "umount", "/system");
+ui_print("Done!");

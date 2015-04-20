@@ -1,0 +1,12 @@
+For the following files:
+    * Makefile
+    * build/main.mk
+    * build/create.sh
+    * build/meta/com/google/android/updater-script
+        GNU License v2
+        (https://www.gnu.org/licenses/gpl-2.0.html for more information)
+
+Any other file:
+    These are closed source/propietary/prebuit files, I do not own them, these are just here
+    to make your life easier when compiling the package.
+    Contacts their own authors for information about their license.
