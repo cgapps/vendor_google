@@ -8,12 +8,9 @@
 DATE=$(date +%F-%H-%M-%S)
 TOP=$(realpath .)
 ANDROIDV=5.1
-BUILDZIP=gapps-$ANDROIDV-$DATE.zip
 OUT=$TOP/out
-TARGETZIP=$OUT/target-zip
-METAINF=$TOP/build/meta
-PREBUILTGAPPS=$TOP/prebuilt/gapps
-
+BUILD=$TOP/build
+METAINF=$BUILD/meta
 
 ##
 # functions
@@ -27,32 +24,31 @@ function printdone(){
 }
 
 function create(){
-    if [ -d $PREBUILTGAPPS ]; then
-        if [ -d $OUT ]; then
-            echo "Previous build found"
-        else
-            echo "No previous build found"
-            mkdir $OUT
-            mkdir $TARGETZIP
-            mkdir $TARGETZIP/tmp
-        fi
-        echo "Getting prebuilts..."
-        cp -r $PREBUILTGAPPS $TARGETZIP/gapps
-        return 0
+    PREBUILT=$TOP/prebuilt/gapps/$GARCH
+    if [ -d $OUT/$GARCH ]; then
+        echo "Previous build found for $GARCH"
     else
-        printerr "Couldn't find prebuilts, sync again"
-        return 1
+        echo "No previous build found for $GARCH"
+        mkdir $OUT
+        TARGET=$OUT/$GARCH
+        mkdir $TARGET
+        mkdir $TARGET/tmp
     fi
+    echo "Getting prebuilts..."
+    cp -r $PREBUILT $TARGET/gapps
+    return $?
 }
 
 function zipit(){
     if [ "$LASTRETURN" == 0 ]; then
+        BUILDZIP=gapps-$ANDROIDV-$GARCH-$DATE.zip
         echo "Importing installation scripts..."
-        cp -r $TARGETZIP/gapps $TARGETZIP/tmp/system
-        cp -r $METAINF $TARGETZIP/tmp/META-INF
+        cp -r $TARGET/gapps $TARGET/tmp/system
+        cp -r $METAINF $TARGET/tmp/META-INF
         echo "Creating package..."
-        cd $TARGETZIP/tmp
+        cd $TARGET/tmp
         zip -r /tmp/$BUILDZIP . &>/dev/null
+        rm -rf $TARGET/tmp
         cd $TOP
         if [ -f /tmp/$BUILDZIP ]; then
             echo "Signing zip..."
@@ -75,6 +71,7 @@ function zipit(){
 ##
 # main
 #
+GARCH=$1
 create
 LASTRETURN=$?
 zipit
