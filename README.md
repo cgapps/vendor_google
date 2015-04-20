@@ -21,10 +21,10 @@ https://github.com/linuxxxxx/vendor_google/releases
 Build
 -------------------
 
-You can compile your GApps package with GNU make (realpath also needed)
+You can compile your GApps package with GNU make
 
 _make distclean_
 - Remove output directory
 
 _make gapps_
-- compile flashable GApps package for most of devices
+- compile signed flashable GApps
