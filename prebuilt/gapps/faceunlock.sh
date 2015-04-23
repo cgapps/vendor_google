@@ -15,6 +15,7 @@ good_ffc_device() {
 
 if good_ffc_device && [ -e /system/etc/permissions/android.hardware.camera.front.xml ]; then
   chmod 755 /system/addon.d/31-faceunlock.sh
+  cd /system/lib; ln -s /system/app/FaceLock/lib/arm/libfacelock_jni.so
 elif  [ -d /system/vendor/pittpatt/ ]; then
   rm -rf /system/vendor/pittpatt/
   rm  -f /system/app/FaceLock.apk

@@ -2,6 +2,10 @@
 
 **GApps for android devices**
 
+Note
+------------------
+
+This is an unofficial repro clone of the original unofficial gapps. It is only a dirty hack of make FaceUnlock working again. Use it at your own risk.
 
 Information
 ------------------
