@@ -29,6 +29,7 @@ priv-app/GoogleLoginService/GoogleLoginService.apk
 priv-app/GoogleOneTimeInitializer/GoogleOneTimeInitializer.apk
 priv-app/GooglePartnerSetup/GooglePartnerSetup.apk
 priv-app/GoogleServicesFramework/GoogleServicesFramework.apk
+priv-app/Hotword/Hotword.apk
 priv-app/Phonesky/Phonesky.apk
 priv-app/PrebuiltGmsCore/PreBuiltGmsCore.apk
 priv-app/PrebuiltGmsCore/lib/arm/libAppDataSearch.so
