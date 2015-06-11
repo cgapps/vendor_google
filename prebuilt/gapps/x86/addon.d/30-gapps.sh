@@ -29,7 +29,7 @@ priv-app/GoogleOneTimeInitializer/GoogleOneTimeInitializer.apk
 priv-app/GooglePartnerSetup/GooglePartnerSetup.apk
 priv-app/GoogleServicesFramework/GoogleServicesFramework.apk
 priv-app/Phonesky/Phonesky.apk
-priv-app/PrebuiltGmsCore/PreBuiltGmsCore.apk
+priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk
 priv-app/PrebuiltGmsCore/lib/x86/libAppDataSearch.so
 priv-app/PrebuiltGmsCore/lib/x86/libconscrypt_gmscore_jni.so
 priv-app/PrebuiltGmsCore/lib/x86/libgames_rtmp_jni.so
