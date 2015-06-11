@@ -31,7 +31,7 @@ priv-app/GooglePartnerSetup/GooglePartnerSetup.apk
 priv-app/GoogleServicesFramework/GoogleServicesFramework.apk
 priv-app/Hotword/Hotword.apk
 priv-app/Phonesky/Phonesky.apk
-priv-app/PrebuiltGmsCore/PreBuiltGmsCore.apk
+priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk
 priv-app/PrebuiltGmsCore/lib/arm/libAppDataSearch.so
 priv-app/PrebuiltGmsCore/lib/arm/libconscrypt_gmscore_jni.so
 priv-app/PrebuiltGmsCore/lib/arm/libgames_rtmp_jni.so
