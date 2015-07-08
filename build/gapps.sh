@@ -34,17 +34,8 @@ function create(){
     echo "OS= $(uname -s -r)" >> $GLOG
     echo "NAME= $(whoami) at $(uname -n)" >> $GLOG
     PREBUILT=$TOP/prebuilt/gapps/$GARCH
-    if [ -d $OUT/$GARCH ]; then
-        echo "Previous build found for $GARCH!" >> $GLOG
-    else
-        echo "No previous build found for $GARCH!" >> $GLOG
-        if [ -d $OUT ]; then
-            echo "OUT directory detected at: $OUT" >> $GLOG
-        else
-            mkdir $OUT
-        fi
-        mkdir $OUT/$GARCH && echo "Created build directories" >> $GLOG
-    fi
+    test -d $OUT || mkdir $OUT
+    test -d $OUT/$GARCH || mkdir -p $OUT/$GARCH
     echo "Getting prebuilts..."
     echo "Copying stuffs" >> $GLOG
     cp -r $PREBUILT $OUT/$GARCH >> $GLOG
