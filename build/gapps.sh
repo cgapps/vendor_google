@@ -74,6 +74,13 @@ function getmd5(){
     fi
 }
 
+function clean(){
+    echo "Cleaning up..."
+    rm -r $OUT/$GARCH
+    rm /tmp/$BUILDZIP
+    return $?
+}
+
 ##
 # main
 #
@@ -87,6 +94,8 @@ if [ "$LASTRETURN" == 0 ]; then
         getmd5
         LASTRETURN=$?
         if [ "$LASTRETURN" == 0 ]; then
+            clean
+            LASTRETURN=$?
             echo "Done!" >> $GLOG
             printdone "Build completed: $OUT/$BUILDZIP"
             printdone "            md5: $GMD5"
