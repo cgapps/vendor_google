@@ -5,7 +5,7 @@ show_progress(1, 15);
 package_extract_dir("arch", "/system");
 package_extract_dir("common", "/system");
 set_perm(0, 0, 0777, "/system/gapps_scripts.sh");
-run_program("/systen/gapps_scripts.sh", "");
+run_program("/system/gapps_scripts.sh", "");
 delete("/system/gapps_scripts");
 show_progress(1, 15);
 set_metadata_recursive("/system/addon.d", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
