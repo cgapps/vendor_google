@@ -6,7 +6,7 @@
 # var
 #
 DATE=$(date +%F-%H-%M)
-TOP=$(realpath .)
+TOP=$(cd . && pwd)
 ANDROIDV=5.1
 OUT=$TOP/out
 BUILD=$TOP/build
