@@ -54,7 +54,7 @@ function zipit(){
     cd $TOP
     if [ -f /tmp/$BUILDZIP ]; then
         echo "Signing zip..."
-        java -Xmx2048m -jar $TOP/build/sign/signapk.jar -w $TOP/build/sign/testkey.x509.pem $TOP/build/sign/testkey.pk8 /tmp/$BUILDZIP $OUT/$GARCH/$BUILDZIP >> $GLOG
+        java -Xmx2048m -jar $TOP/build/sign/signapk.jar -w $TOP/build/sign/testkey.x509.pem $TOP/build/sign/testkey.pk8 /tmp/$BUILDZIP $OUT/$BUILDZIP >> $GLOG
     else
         printerr "Couldn't zip files!"
         echo "Couldn't find unsigned zip file, aborting" >> $GLOG
@@ -66,7 +66,7 @@ function getmd5(){
     if [ -x $(which md5sum) ]; then
         echo "md5sum is installed, getting md5..." >> $GLOG
         echo "Getting md5sum..."
-        GMD5=$(md5sum $OUT/$GARCH/$BUILDZIP)
+        GMD5=$(md5sum $OUT/$BUILDZIP)
         return 0
     else
         echo "md5sum is not installed, aborting" >> $GLOG
@@ -88,7 +88,7 @@ if [ "$LASTRETURN" == 0 ]; then
         LASTRETURN=$?
         if [ "$LASTRETURN" == 0 ]; then
             echo "Done!" >> $GLOG
-            printdone "Build completed: $OUT/$GARCH/$BUILDZIP"
+            printdone "Build completed: $OUT/$BUILDZIP"
             printdone "            md5: $GMD5"
             exit 0
         else
