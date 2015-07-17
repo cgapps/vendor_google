@@ -33,20 +33,6 @@ x86: devices with an (Intel) x86 soc (Nexus Player, Zenphone devices etc...)
 
 [x86](https://github.com/cgapps/vendor_google/tree/builds/arm)
 
-Lastest build
-
-| ARM   |   ARM64    |   x86  |
-|----------|:-------------:|------:|
-| 2015.07.03 |  2015.07.03 | 2015.07.03 |
-| 2da8e3854bb516d4da19dff239338a44 | 8d3a0ad7bce275b87a965f3429b7b11d | aa20557281d7165c0a000afceac33321 |
-
-Links
-------------------
-[Google +](https://google.com/+CgappsGithubIo0)
-
-[Website](cgapps.github.io)
-
-
 Build
 -------------------
 
