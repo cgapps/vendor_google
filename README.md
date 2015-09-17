@@ -31,7 +31,7 @@ x86: devices with an (Intel) x86 soc (Nexus Player, Zenphone devices etc...)
 
 [arm64](https://github.com/cgapps/vendor_google/tree/builds/arm64)
 
-[x86](https://github.com/cgapps/vendor_google/tree/builds/arm)
+[x86](https://github.com/cgapps/vendor_google/tree/builds/x86)
 
 Build
 -------------------
