@@ -10,7 +10,7 @@ These are Google Apps for who want to install Google Packages on a custom rom.
 Remember Apks and Jars files are prebuilt from Google.
 All closed source files come from Nexuses' factory images.
 This contains just the core files needed to setup a fully working Google account,
-users will choose wich apps they want on their devices.
+users will choose which apps they want on their devices.
 GApps contain a "quite old" universal Play Service, so the Play Store will download the proper one
 for your device asap.
 These GApps get monthly updates, fell free to fork and contribute to this, but remember,
