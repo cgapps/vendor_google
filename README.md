@@ -13,7 +13,7 @@ This contains just the core files needed to setup a fully working Google account
 users will choose which apps they want on their devices.
 GApps contain a "quite old" universal Play Service, so the Play Store will download the proper one
 for your device asap.
-These GApps get monthly updates, fell free to fork and contribute to this, but remember,
+These GApps get monthly updates, feel free to fork and contribute to this, but remember,
 **Opensource does not mean out-of-respect**.
 Also **NO MIRRORS ALLOWED**
 
